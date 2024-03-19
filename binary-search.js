@@ -6,7 +6,28 @@ for (let i = 1; i < size; i++){
 }
 
 
-//binary search function.
+//binary search function. 
 function binarySearch(array, item){
-    ;
+    //positions
+    let low = 0;
+    let high = (array.length) - 1;
+
+    while(low <= high){
+        let mid = parseInt((low + high) / 2) //mid index array.
+        let guess = array[mid] //value of array.
+
+        if (guess === item){
+            return mid
+        }
+
+        else if (guess > item){
+            high = mid -1
+        }
+
+        else {
+            low = mid +1
+        }
+    }
+
+    return null //item not in list
 }
